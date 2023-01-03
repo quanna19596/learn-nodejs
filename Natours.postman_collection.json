@@ -35,7 +35,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/3",
+							"raw": "localhost:8000/api/v1/tours/63b3a4682ae6669dada3dc4e",
 							"host": [
 								"localhost"
 							],
@@ -44,7 +44,7 @@
 								"api",
 								"v1",
 								"tours",
-								"3"
+								"63b3a4682ae6669dada3dc4e"
 							]
 						}
 					},
@@ -57,7 +57,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Test Tour\",\r\n    \"duration\": 10,\r\n    \"difficulty\": \"easy\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Snow Adventure\",\r\n    \"price\": 607,\r\n    \"rating\": 4.8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,7 +86,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"duration\": 10\r\n}",
+							"raw": "{\r\n    \"price\": 500\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/3",
+							"raw": "localhost:8000/api/v1/tours/63b3a4682ae6669dada3dc4e",
 							"host": [
 								"localhost"
 							],
@@ -103,7 +103,7 @@
 								"api",
 								"v1",
 								"tours",
-								"3"
+								"63b3a4682ae6669dada3dc4e"
 							]
 						}
 					},
@@ -115,7 +115,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/3",
+							"raw": "localhost:8000/api/v1/tours/63b3fae7f436f59593b69ba4",
 							"host": [
 								"localhost"
 							],
@@ -124,7 +124,7 @@
 								"api",
 								"v1",
 								"tours",
-								"3"
+								"63b3fae7f436f59593b69ba4"
 							]
 						}
 					},
