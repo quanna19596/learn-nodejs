@@ -11,15 +11,41 @@
 			"item": [
 				{
 					"name": "Get All Tours",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZmYyNWM0ZjEyYTIxZDUyNGFiMzM2NCIsImlhdCI6MTY3NzgxNDU2NywiZXhwIjoxNjg1NTkwNTY3fQ.GN4BcZ1UhYysDHj2tiRhGppUEkcOpT27SGPDcssg1fo",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours",
+							"raw": "{{URL}}/api/v1/tours",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -32,19 +58,28 @@
 				{
 					"name": "Get Tour",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/63b3a4682ae6669dada3dc4e",
+							"raw": "{{URL}}/api/v1/tours/63b401f110472c6d43c4c772",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
 								"tours",
-								"63b3a4682ae6669dada3dc4e"
+								"63b401f110472c6d43c4c772"
 							]
 						}
 					},
@@ -53,11 +88,21 @@
 				{
 					"name": "Create New Tour",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Snow Adventure\",\r\n    \"price\": 607,\r\n    \"rating\": 4.8\r\n}",
+							"raw": "{\r\n    \"name\": \"Snow Adventure\",\r\n    \"maxGroupSize\": 1,\r\n    \"difficulty\": \"easy\",\r\n    \"price\": 607,\r\n    \"rating\": 4.8,\r\n    \"summary\": \"Test Tour\",\r\n    \"imageCover\": \"demo.png\",\r\n    \"ratingsAverage\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,11 +110,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8000/api/v1/tours",
+							"raw": "{{URL}}/api/v1/tours",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -82,6 +126,16 @@
 				{
 					"name": "Update Tour",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -94,11 +148,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/63b3a4682ae6669dada3dc4e",
+							"raw": "{{URL}}/api/v1/tours/63b3a4682ae6669dada3dc4e",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -112,14 +165,23 @@
 				{
 					"name": "Delete Tour",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/63b3fae7f436f59593b69ba4",
+							"raw": "{{URL}}/api/v1/tours/63b3fae7f436f59593b69ba4",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -133,14 +195,23 @@
 				{
 					"name": "Get Tour Stats",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/tour-stats",
+							"raw": "{{URL}}/api/v1/tours/tour-stats",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -154,14 +225,23 @@
 				{
 					"name": "Get Monthly Plan",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/tours/monthly-plan/2022",
+							"raw": "{{URL}}/api/v1/tours/monthly-plan/2022",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -181,14 +261,23 @@
 				{
 					"name": "Get All Users",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/users",
+							"raw": "{{URL}}/api/v1/users",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -201,19 +290,128 @@
 				{
 					"name": "Get User",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8000/api/v1/users/1",
+							"raw": "{{URL}}/api/v1/users/1",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
 								"users",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('jwt', pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Quan New\",\r\n    \"email\": \"quanna.195.new@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"confirmPassword\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('jwt', pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"quanna.195.9633@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
 							]
 						}
 					},
