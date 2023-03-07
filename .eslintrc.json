@@ -8,6 +8,9 @@
         "endOfLine": "auto"
       }
     ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
     "spaced-comment": "off",
     "no-console": "warn",
     "consistent-return": "off",
